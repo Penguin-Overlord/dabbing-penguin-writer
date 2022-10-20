@@ -1,0 +1,88 @@
+.logo {
+  pointer-events: none;
+  font-family: "Consolas", "Courier New", Courier, monospace;
+  box-shadow: none;
+}
+
+.logo.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.logo.w-h-70 {
+  max-width: 70px;
+  max-height: 70px;
+}
+
+.logo.circle {
+  border-radius: 50%;
+}
+
+.logo.cover {
+  padding: 8px;
+  box-shadow: 0 0 6px 2px var(--color-primary) inset;
+}
+
+.logo.text {
+  display: block;
+  color: var(--color-text);
+  font-size: medium;
+  text-shadow: 0 0 8px var(--color-primary);
+}
+
+.logo.text::before {
+  display: inline;
+  content: "Requesting Audience";
+}
+
+.logo.text::after {
+  display: inline;
+  content: "";
+  animation: dots 1000ms ease-in-out 0ms infinite alternate forwards;
+}
+
+.flip-bounce {
+  animation: flip-bounce 1000ms ease-in-out 0ms infinite alternate forwards;
+}
+
+@keyframes flip-bounce {
+  from {
+    transform: scaleX(1) rotate(-30deg);
+  }
+
+  25% {
+    transform: scaleX(1) rotate(20deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  75% {
+    transform: scaleX(-1) rotate(20deg);
+  }
+
+  to {
+    transform: scaleX(-1) rotate(-30deg);
+  }
+}
+
+@keyframes dots {
+  25% {
+    content: "";
+  }
+
+  50% {
+    content: ".";
+  }
+
+  75% {
+    content: "..";
+  }
+
+  100% {
+    content: "...";
+  }
+}
